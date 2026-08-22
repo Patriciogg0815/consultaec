@@ -11,6 +11,8 @@ Sitio web listo para publicar y monetizar con publicidad. HTML/CSS/JS puro, sin 
 | `calculadora-finiquito.html` | **Finiquito / liquidación** | "calcular finiquito / liquidación" |
 | `calculadora-sueldo-neto.html` | **Sueldo neto** (IESS 9,45%) | "calcular sueldo neto Ecuador" |
 | `calculadora-horas-extra.html` | **Horas extra** (50% y 100%) | "calcular horas extra Ecuador" |
+| `calculadora-iess.html` | **Aportes al IESS** (9,45% / 11,15%) | "calcular aportes IESS Ecuador" |
+| `conversor-horas.html` | **Conversor de horas** (decimal ↔ h:min) | "convertir horas decimales a minutos" |
 
 Cada página tiene su propio título, descripción y contenido → así cada una puede
 posicionar por separado en Google (más tráfico = más ingresos).
