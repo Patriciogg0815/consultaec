@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Calculadora de Horas Extra Ecuador (50% y 100%) | ConsultaEC</title>
-<meta name="description" content="Calcula el pago de tus horas extra en Ecuador: suplementarias con recargo del 50% y extraordinarias con recargo del 100%. Rápido y gratis.">
-<link rel="canonical" href="https://consultaec.netlify.app/calculadora-horas-extra">
+<title>Calculadora de Aportes al IESS Ecuador (9,45% y 11,15%) | ConsultaEC</title>
+<meta name="description" content="Calcula tus aportes al IESS en Ecuador: aporte personal (9,45%), aporte patronal (11,15%), total y fondos de reserva (8,33%). Gratis y al instante.">
+<link rel="canonical" href="https://consultaec.netlify.app/calculadora-iess">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232563eb'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-size='30' font-weight='bold' fill='white' text-anchor='middle'%3EEC%3C/text%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ConsultaEC">
-<meta property="og:title" content="Calculadora de Horas Extra Ecuador (50% y 100%)">
-<meta property="og:description" content="Calcula tus horas suplementarias y extraordinarias al instante. Gratis.">
-<meta property="og:url" content="https://consultaec.netlify.app/calculadora-horas-extra">
+<meta property="og:title" content="Calculadora de Aportes al IESS Ecuador">
+<meta property="og:description" content="Aporte personal, patronal, total y fondos de reserva. Gratis.">
+<meta property="og:url" content="https://consultaec.netlify.app/calculadora-iess">
 <meta property="og:image" content="https://consultaec.netlify.app/og-image.png">
 <meta name="theme-color" content="#1d4ed8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,17 +34,17 @@
     <a class="link" href="calculadora-iva.html">IVA</a>
     <a class="link" href="calculadora-finiquito.html">Finiquito</a>
     <a class="link" href="calculadora-sueldo-neto.html">Sueldo neto</a>
-    <a class="link on" href="calculadora-horas-extra.html">Horas extra</a>
-    <a class="link" href="calculadora-iess.html">IESS</a>
+    <a class="link" href="calculadora-horas-extra.html">Horas extra</a>
+    <a class="link on" href="calculadora-iess.html">IESS</a>
     <a class="link" href="conversor-horas.html">Conversor</a>
   </nav>
 </header>
 
 <main>
   <section class="hero">
-    <span class="badge">🇪🇨 Recargos 50% y 100%</span>
-    <h1>Calculadora de <span>horas extra</span></h1>
-    <p>Calcula cuánto te corresponde por horas suplementarias (50%) y extraordinarias (100%) según tu sueldo.</p>
+    <span class="badge">🇪🇨 Aportes al IESS</span>
+    <h1>Calculadora de <span>aportes al IESS</span></h1>
+    <p>Calcula cuánto se aporta al IESS según tu sueldo: la parte que pagas tú, la del empleador y los fondos de reserva.</p>
   </section>
 
   <div class="wrap">
@@ -53,20 +53,12 @@
     <div class="grid">
       <div>
         <div class="card">
-          <h2>Ingresa tus datos</h2>
-          <p class="hint">El valor de la hora normal se calcula dividiendo el sueldo mensual para 240 horas.</p>
+          <h2>Ingresa tu sueldo</h2>
+          <p class="hint">En relación de dependencia (sector privado): aporte personal 9,45%, patronal 11,15% y fondos de reserva 8,33%.</p>
           <div class="calc-grid">
             <div class="field full">
-              <label class="lbl" for="sueldo">Sueldo mensual (US$)</label>
-              <input type="number" id="sueldo" inputmode="decimal" min="0" step="0.01" placeholder="Ej: 600">
-            </div>
-            <div class="field">
-              <label class="lbl" for="sup">Horas suplementarias (recargo 50%)</label>
-              <input type="number" id="sup" inputmode="decimal" min="0" step="0.5" placeholder="0">
-            </div>
-            <div class="field">
-              <label class="lbl" for="ext">Horas extraordinarias (recargo 100%)</label>
-              <input type="number" id="ext" inputmode="decimal" min="0" step="0.5" placeholder="0">
+              <label class="lbl" for="sueldo">Sueldo / base imponible mensual (US$)</label>
+              <input type="number" id="sueldo" inputmode="decimal" min="0" step="0.01" placeholder="Ej: 800">
             </div>
           </div>
           <div class="actions" style="margin-top:10px">
@@ -76,15 +68,19 @@
 
           <div class="out" id="out">
             <div class="big">
-              <span><span class="lbl2">Total a recibir por horas extra</span><br><span class="num" id="total">$0,00</span></span>
-              <span style="font-size:34px">⏱️</span>
+              <span><span class="lbl2">Aporte personal (se descuenta de tu sueldo)</span><br><span class="num" id="personal">$0,00</span></span>
+              <span style="font-size:34px">🏥</span>
             </div>
             <table class="tab-det">
-              <tr><td>Valor hora normal (sueldo ÷ 240)</td><td id="vhora">$0,00</td></tr>
-              <tr><td>Horas suplementarias (× 1,5)</td><td id="rsup">$0,00</td></tr>
-              <tr><td>Horas extraordinarias (× 2)</td><td id="rext">$0,00</td></tr>
-              <tr><td><b>Total</b></td><td id="rtotal">$0,00</td></tr>
+              <tr><td>Aporte personal (9,45%)</td><td id="rpersonal">$0,00</td></tr>
+              <tr><td>Aporte patronal (11,15%) — lo paga el empleador</td><td id="rpatronal">$0,00</td></tr>
+              <tr><td><b>Total que recibe el IESS al mes</b></td><td id="rtotal">$0,00</td></tr>
+              <tr><td>Fondos de reserva (8,33%) — desde el 2.º año</td><td id="rfondo">$0,00</td></tr>
             </table>
+          </div>
+
+          <div class="aviso" style="margin-top:18px">
+            <b>Nota:</b> Los porcentajes corresponden a trabajadores en relación de dependencia del sector privado. Para afiliación voluntaria o trabajo no remunerado del hogar, las tasas cambian.
           </div>
         </div>
 
@@ -92,9 +88,10 @@
 
         <section class="faq" id="faq">
           <h2>Preguntas frecuentes</h2>
-          <details open><summary>¿Cuál es la diferencia entre horas suplementarias y extraordinarias?</summary><p>Las suplementarias son las que trabajas después de tu jornada, hasta un máximo diario, y tienen un recargo del 50%. Las extraordinarias son las de noche (24h a 6h), sábados, domingos o feriados, con un recargo del 100%.</p></details>
-          <details><summary>¿Cómo se calcula el valor de la hora?</summary><p>Se divide el sueldo mensual para 240 horas. Ese es el valor de la hora normal; luego se aplica el recargo correspondiente (×1,5 o ×2).</p></details>
-          <details><summary>¿Este cálculo es oficial?</summary><p>Es una estimación referencial basada en las reglas generales del Código del Trabajo. Verifica con tu rol de pagos.</p></details>
+          <details open><summary>¿Cuánto se aporta al IESS?</summary><p>En relación de dependencia, el aporte total es del 20,60% del sueldo: 9,45% lo pone el trabajador (se descuenta del sueldo) y 11,15% el empleador.</p></details>
+          <details><summary>¿Qué son los fondos de reserva?</summary><p>Es un beneficio equivalente al 8,33% del sueldo (un sueldo adicional al año) que el empleador paga a partir del segundo año de trabajo. Puedes recibirlo mensualmente o acumularlo en el IESS.</p></details>
+          <details><summary>¿El aporte patronal se descuenta de mi sueldo?</summary><p>No. El aporte patronal (11,15%) lo paga la empresa aparte; de tu sueldo solo se descuenta el 9,45% personal.</p></details>
+          <details><summary>¿Es un cálculo oficial?</summary><p>Es referencial. Los valores exactos dependen de tu base imponible registrada en el IESS.</p></details>
         </section>
       </div>
 
@@ -124,31 +121,26 @@
       <a href="contacto.html">Contacto</a>
     </div>
   </div>
-  <div class="wrap"><div class="legal"><b>Aviso:</b> Cálculo referencial. No sustituye el rol de pagos oficial de tu empleador.</div></div>
+  <div class="wrap"><div class="legal"><b>Aviso:</b> Cálculo referencial. No sustituye la información oficial del IESS.</div></div>
 </footer>
 
 <script>
 const fmt=n=>'$'+(Math.round(n*100)/100).toLocaleString('es-EC',{minimumFractionDigits:2,maximumFractionDigits:2});
 const $=id=>document.getElementById(id);
 function calcular(){
-  const sueldo=parseFloat($('sueldo').value)||0;
-  const sup=parseFloat($('sup').value)||0;
-  const ext=parseFloat($('ext').value)||0;
-  if(sueldo<=0){ $('out').className='out'; $('sueldo').focus(); return; }
-  const vh=sueldo/240;
-  const pSup=sup*vh*1.5;
-  const pExt=ext*vh*2;
-  const total=pSup+pExt;
-  $('vhora').textContent=fmt(vh);
-  $('rsup').textContent=fmt(pSup);
-  $('rext').textContent=fmt(pExt);
+  const s=parseFloat($('sueldo').value)||0;
+  if(s<=0){ $('out').className='out'; $('sueldo').focus(); return; }
+  const personal=s*0.0945, patronal=s*0.1115, total=personal+patronal, fondo=s*0.0833;
+  $('personal').textContent=fmt(personal);
+  $('rpersonal').textContent=fmt(personal);
+  $('rpatronal').textContent=fmt(patronal);
   $('rtotal').textContent=fmt(total);
-  $('total').textContent=fmt(total);
+  $('rfondo').textContent=fmt(fondo);
   $('out').className='out show';
 }
 $('calc').onclick=calcular;
-$('clr').onclick=()=>{$('sueldo').value='';$('sup').value='';$('ext').value='';$('out').className='out';$('sueldo').focus();};
-['sueldo','sup','ext'].forEach(id=>$(id).addEventListener('keydown',e=>{if(e.key==='Enter')calcular();}));
+$('clr').onclick=()=>{$('sueldo').value='';$('out').className='out';$('sueldo').focus();};
+$('sueldo').addEventListener('keydown',e=>{if(e.key==='Enter')calcular();});
 </script>
 </body>
 </html>

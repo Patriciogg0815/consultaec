@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es-EC">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conversor de Horas: Decimal a Horas y Minutos | ConsultaEC</title>
+<meta name="description" content="Convierte horas decimales a horas y minutos y viceversa. Ideal para roles de pago, horas trabajadas y control de tiempo. Rápido y gratis.">
+<link rel="canonical" href="https://consultaec.netlify.app/conversor-horas">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232563eb'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-size='30' font-weight='bold' fill='white' text-anchor='middle'%3EEC%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ConsultaEC">
+<meta property="og:title" content="Conversor de Horas: Decimal a Horas y Minutos">
+<meta property="og:description" content="Convierte horas decimales a horas y minutos y viceversa. Gratis.">
+<meta property="og:url" content="https://consultaec.netlify.app/conversor-horas">
+<meta property="og:image" content="https://consultaec.netlify.app/og-image.png">
+<meta name="theme-color" content="#1d4ed8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+<script src="analytics.js" defer></script>
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6398797687169342" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="franja"></div>
+
+<header>
+  <nav class="nav wrap">
+    <a class="logo" href="index.html"><span class="dot">EC</span> ConsultaEC</a>
+    <span class="sp"></span>
+    <a class="link" href="index.html">Cédula / RUC</a>
+    <a class="link" href="calculadora-decimos.html">Décimos</a>
+    <a class="link" href="calculadora-iva.html">IVA</a>
+    <a class="link" href="calculadora-finiquito.html">Finiquito</a>
+    <a class="link" href="calculadora-sueldo-neto.html">Sueldo neto</a>
+    <a class="link" href="calculadora-horas-extra.html">Horas extra</a>
+    <a class="link" href="calculadora-iess.html">IESS</a>
+    <a class="link on" href="conversor-horas.html">Conversor</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <span class="badge">⏱️ Conversor de tiempo</span>
+    <h1>Conversor de <span>horas</span></h1>
+    <p>Convierte horas decimales a horas y minutos, y al revés. Perfecto para roles de pago, horas trabajadas y control de tiempo.</p>
+  </section>
+
+  <div class="wrap">
+    <div class="ad" id="ad-top"><span class="ad__label">Publicidad</span><div class="ad__box">Espacio publicitario 728×90</div></div>
+
+    <div class="grid">
+      <div>
+        <div class="tabs">
+          <button class="tab on" data-t="dec">Decimal → Horas y minutos</button>
+          <button class="tab" data-t="hm">Horas y minutos → Decimal</button>
+        </div>
+
+        <!-- Decimal -> H:M -->
+        <div class="panel on card" id="p-dec">
+          <h2>De horas decimales a horas y minutos</h2>
+          <p class="hint">Ejemplo: 2,75 horas = 2 h 45 min.</p>
+          <div class="field">
+            <label class="lbl" for="dec">Horas decimales</label>
+            <div class="input-row">
+              <input type="number" id="dec" inputmode="decimal" min="0" step="0.01" placeholder="Ej: 2.75" style="font-size:20px">
+              <button class="btn" id="btn-dec">Convertir</button>
+            </div>
+          </div>
+          <div class="out" id="out-dec">
+            <div class="big">
+              <span><span class="lbl2">Equivale a</span><br><span class="num" id="r-hm">0 h 0 min</span></span>
+              <span style="font-size:34px">⏱️</span>
+            </div>
+            <table class="tab-det">
+              <tr><td>En minutos</td><td id="r-min">0</td></tr>
+              <tr><td>En segundos</td><td id="r-seg">0</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <!-- H:M -> Decimal -->
+        <div class="panel card" id="p-hm">
+          <h2>De horas y minutos a decimal</h2>
+          <p class="hint">Ejemplo: 2 h 45 min = 2,75 horas.</p>
+          <div class="calc-grid">
+            <div class="field">
+              <label class="lbl" for="hh">Horas</label>
+              <input type="number" id="hh" inputmode="numeric" min="0" step="1" placeholder="Ej: 2">
+            </div>
+            <div class="field">
+              <label class="lbl" for="mm">Minutos</label>
+              <input type="number" id="mm" inputmode="numeric" min="0" max="59" step="1" placeholder="Ej: 45">
+            </div>
+          </div>
+          <div class="actions" style="margin-top:6px"><button class="btn" id="btn-hm">Convertir</button></div>
+          <div class="out" id="out-hm">
+            <div class="big">
+              <span><span class="lbl2">En horas decimales</span><br><span class="num" id="r-dec">0</span></span>
+              <span style="font-size:34px">🔢</span>
+            </div>
+            <table class="tab-det">
+              <tr><td>En minutos totales</td><td id="r-min2">0</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="ad ad--rect"><span class="ad__label">Publicidad</span><div class="ad__box">Espacio publicitario 300×250 / responsive</div></div>
+
+        <section class="faq" id="faq">
+          <h2>Preguntas frecuentes</h2>
+          <details open><summary>¿Cómo paso horas decimales a horas y minutos?</summary><p>La parte entera son las horas; la parte decimal se multiplica por 60 para obtener los minutos. Ejemplo: 2,75 → 2 horas y 0,75 × 60 = 45 minutos.</p></details>
+          <details><summary>¿Cómo paso horas y minutos a decimal?</summary><p>Se dividen los minutos para 60 y se suman a las horas. Ejemplo: 2 h 45 min → 45 ÷ 60 = 0,75 → 2,75 horas.</p></details>
+          <details><summary>¿Para qué sirve?</summary><p>Es muy útil para roles de pago, cálculo de horas extra, facturación por horas y control de jornada laboral.</p></details>
+        </section>
+      </div>
+
+      <aside class="aside">
+        <div class="ad ad--side" style="margin-top:0"><span class="ad__label">Publicidad</span><div class="ad__box">Espacio publicitario 300×600</div></div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="fcols">
+    <div class="fnote">
+      <span class="logo" style="font-size:16px"><span class="dot" style="width:26px;height:26px;border-radius:8px;font-size:12px">EC</span> ConsultaEC</span>
+      <p style="margin-top:10px">Herramientas gratuitas para Ecuador. Cálculo local en tu navegador.</p>
+    </div>
+    <div class="flinks">
+      <a href="index.html">Validar Cédula / RUC</a>
+      <a href="calculadora-decimos.html">Calculadora de Décimos</a>
+      <a href="calculadora-iva.html">Calculadora de IVA</a>
+      <a href="calculadora-finiquito.html">Calculadora de Finiquito</a>
+      <a href="calculadora-sueldo-neto.html">Calculadora de Sueldo Neto</a>
+      <a href="calculadora-horas-extra.html">Calculadora de Horas Extra</a>
+      <a href="calculadora-iess.html">Calculadora de IESS</a>
+      <a href="conversor-horas.html">Conversor de Horas</a>
+      <a href="politica-privacidad.html">Política de Privacidad</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+  </div>
+  <div class="wrap"><div class="legal"><b>Aviso:</b> Herramienta de conversión con fines informativos.</div></div>
+</footer>
+
+<script>
+const $=id=>document.getElementById(id);
+const nf=n=>n.toLocaleString('es-EC',{maximumFractionDigits:2});
+
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));
+  document.querySelectorAll('.panel').forEach(x=>x.classList.remove('on'));
+  t.classList.add('on');
+  document.getElementById('p-'+t.dataset.t).classList.add('on');
+});
+
+// Decimal -> H:M
+function convDec(){
+  const d=parseFloat($('dec').value)||0;
+  if(d<0){$('out-dec').className='out';return;}
+  const totalMin=Math.round(d*60);
+  const h=Math.floor(totalMin/60), m=totalMin%60;
+  $('r-hm').textContent=h+' h '+m+' min';
+  $('r-min').textContent=nf(totalMin)+' min';
+  $('r-seg').textContent=nf(Math.round(d*3600))+' s';
+  $('out-dec').className='out show';
+}
+$('btn-dec').onclick=convDec;
+$('dec').addEventListener('keydown',e=>{if(e.key==='Enter')convDec();});
+
+// H:M -> Decimal
+function convHM(){
+  const h=parseInt($('hh').value)||0;
+  let m=parseInt($('mm').value)||0;
+  if(h===0&&m===0){$('out-hm').className='out';return;}
+  const dec=h+m/60;
+  $('r-dec').textContent=nf(Math.round(dec*100)/100)+' h';
+  $('r-min2').textContent=nf(h*60+m)+' min';
+  $('out-hm').className='out show';
+}
+$('btn-hm').onclick=convHM;
+['hh','mm'].forEach(id=>$(id).addEventListener('keydown',e=>{if(e.key==='Enter')convHM();}));
+</script>
+</body>
+</html>
