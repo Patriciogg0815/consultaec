@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es-EC">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Finiquito y Liquidación Ecuador 2026 | ConsultaEC</title>
+<meta name="description" content="Calcula tu finiquito o liquidación en Ecuador: décimos proporcionales, vacaciones no gozadas e indemnización por despido intempestivo. Gratis y referencial.">
+<link rel="canonical" href="https://consultaec.netlify.app/calculadora-finiquito">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232563eb'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-size='30' font-weight='bold' fill='white' text-anchor='middle'%3EEC%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ConsultaEC">
+<meta property="og:title" content="Calculadora de Finiquito y Liquidación Ecuador">
+<meta property="og:description" content="Décimos proporcionales, vacaciones e indemnización por despido. Gratis.">
+<meta property="og:url" content="https://consultaec.netlify.app/calculadora-finiquito">
+<meta property="og:image" content="https://consultaec.netlify.app/og-image.png">
+<meta name="theme-color" content="#1d4ed8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+<script src="analytics.js" defer></script>
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6398797687169342" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="franja"></div>
+
+<header>
+  <nav class="nav wrap">
+    <a class="logo" href="index.html"><span class="dot">EC</span> ConsultaEC</a>
+    <span class="sp"></span>
+    <a class="link" href="index.html">Cédula / RUC</a>
+    <a class="link" href="calculadora-decimos.html">Décimos</a>
+    <a class="link" href="calculadora-iva.html">IVA</a>
+    <a class="link on" href="calculadora-finiquito.html">Finiquito</a>
+    <a class="link" href="calculadora-sueldo-neto.html">Sueldo neto</a>
+    <a class="link" href="calculadora-horas-extra.html">Horas extra</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <span class="badge">🇪🇨 Liquidación laboral</span>
+    <h1>Calculadora de <span>finiquito</span></h1>
+    <p>Estima tu liquidación: décimos proporcionales, vacaciones no gozadas e indemnización según el motivo de salida.</p>
+  </section>
+
+  <div class="wrap">
+    <div class="ad" id="ad-top"><span class="ad__label">Publicidad</span><div class="ad__box">Espacio publicitario 728×90</div></div>
+
+    <div class="grid">
+      <div>
+        <div class="card">
+          <h2>Datos del trabajador</h2>
+          <p class="hint">Ingresa tu remuneración y fechas. El cálculo es referencial.</p>
+          <div class="calc-grid">
+            <div class="field">
+              <label class="lbl" for="rem">Última remuneración mensual (US$)</label>
+              <input type="number" id="rem" inputmode="decimal" min="0" step="0.01" placeholder="Ej: 700">
+            </div>
+            <div class="field">
+              <label class="lbl" for="sbu">SBU vigente (US$)</label>
+              <input type="number" id="sbu" inputmode="decimal" min="0" step="1" value="470">
+            </div>
+            <div class="field">
+              <label class="lbl" for="ing">Fecha de ingreso</label>
+              <input type="date" id="ing">
+            </div>
+            <div class="field">
+              <label class="lbl" for="sal">Fecha de salida</label>
+              <input type="date" id="sal">
+            </div>
+            <div class="field">
+              <label class="lbl" for="motivo">Motivo de salida</label>
+              <select id="motivo">
+                <option value="renuncia">Renuncia voluntaria</option>
+                <option value="despido">Despido intempestivo</option>
+                <option value="desahucio">Desahucio (aviso anticipado)</option>
+              </select>
+            </div>
+            <div class="field">
+              <label class="lbl" for="region">Región (para décimo cuarto)</label>
+              <select id="region">
+                <option value="sierra">Sierra / Amazonía</option>
+                <option value="costa">Costa / Insular</option>
+              </select>
+            </div>
+          </div>
+          <div class="actions" style="margin-top:10px">
+            <button class="btn" id="calc">Calcular finiquito</button>
+            <button class="btn ghost" id="clr">Limpiar</button>
+          </div>
+
+          <div class="aviso" id="err" style="display:none"></div>
+
+          <div class="out" id="out">
+            <div class="big">
+              <span><span class="lbl2">Total estimado de finiquito</span><br><span class="num" id="total">$0,00</span></span>
+              <span style="font-size:34px">💼</span>
+            </div>
+            <table class="tab-det" id="detalle"></table>
+          </div>
+
+          <div class="aviso" style="margin-top:18px">
+            <b>⚠️ Cálculo referencial.</b> Los valores reales dependen de tu contrato, promedios de ingresos variables y la normativa vigente. Confirma tu liquidación con el empleador, un profesional o el Ministerio del Trabajo antes de tomar decisiones.
+          </div>
+        </div>
+
+        <div class="ad ad--rect"><span class="ad__label">Publicidad</span><div class="ad__box">Espacio publicitario 300×250 / responsive</div></div>
+
+        <section class="faq" id="faq">
+          <h2>Preguntas frecuentes</h2>
+          <details open><summary>¿Qué incluye el finiquito?</summary><p>Generalmente incluye el décimo tercero y décimo cuarto proporcionales no cobrados, las vacaciones no gozadas y, si hubo despido intempestivo, la indemnización correspondiente.</p></details>
+          <details><summary>¿Cómo es la indemnización por despido intempestivo?</summary><p>Según el Art. 188 del Código del Trabajo: hasta 3 años de servicio, 3 remuneraciones; con más de 3 años, una remuneración por cada año (la fracción cuenta como año completo), con un tope de 25 remuneraciones.</p></details>
+          <details><summary>¿Y si renuncio voluntariamente?</summary><p>En una renuncia normalmente recibes los proporcionales (décimos y vacaciones), pero no indemnización. En el desahucio (aviso anticipado) corresponde una bonificación del 25% de la última remuneración por año de servicio.</p></details>
+          <details><summary>¿Este resultado es oficial?</summary><p>No. Es una estimación educativa. Usa la calculadora oficial del Ministerio del Trabajo o consulta a un profesional para el valor definitivo.</p></details>
+        </section>
+      </div>
+
+      <aside class="aside">
+        <div class="ad ad--side" style="margin-top:0"><span class="ad__label">Publicidad</span><div class="ad__box">Espacio publicitario 300×600</div></div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="fcols">
+    <div class="fnote">
+      <span class="logo" style="font-size:16px"><span class="dot" style="width:26px;height:26px;border-radius:8px;font-size:12px">EC</span> ConsultaEC</span>
+      <p style="margin-top:10px">Herramientas gratuitas para Ecuador. Cálculo local en tu navegador.</p>
+    </div>
+    <div class="flinks">
+      <a href="index.html">Validar Cédula / RUC</a>
+      <a href="calculadora-decimos.html">Calculadora de Décimos</a>
+      <a href="calculadora-iva.html">Calculadora de IVA</a>
+      <a href="calculadora-finiquito.html">Calculadora de Finiquito</a>
+      <a href="calculadora-sueldo-neto.html">Calculadora de Sueldo Neto</a>
+      <a href="calculadora-horas-extra.html">Calculadora de Horas Extra</a>
+      <a href="politica-privacidad.html">Política de Privacidad</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+  </div>
+  <div class="wrap"><div class="legal"><b>Aviso:</b> Cálculo referencial. No sustituye la liquidación oficial del Ministerio del Trabajo ni la asesoría de un profesional.</div></div>
+</footer>
+
+<script>
+const fmt=n=>'$'+(Math.round(n*100)/100).toLocaleString('es-EC',{minimumFractionDigits:2,maximumFractionDigits:2});
+const $=id=>document.getElementById(id);
+const dias=(a,b)=>Math.max(0,Math.round((b-a)/86400000));
+const maxD=(a,b)=>a>b?a:b;
+// inicio del periodo (mes 0-index, día) inmediatamente anterior o igual a "ref"
+function inicioPeriodo(ref,mes,dia){
+  let c=new Date(ref.getFullYear(),mes,dia);
+  if(c>ref) c=new Date(ref.getFullYear()-1,mes,dia);
+  return c;
+}
+function calcular(){
+  const rem=parseFloat($('rem').value)||0;
+  const sbu=parseFloat($('sbu').value)||0;
+  const ing=$('ing').value?new Date($('ing').value+'T00:00:00'):null;
+  const sal=$('sal').value?new Date($('sal').value+'T00:00:00'):null;
+  const motivo=$('motivo').value, region=$('region').value;
+  const err=$('err');
+  const fail=m=>{err.style.display='block';err.textContent=m;$('out').className='out';};
+  if(rem<=0) return fail('Ingresa la última remuneración mensual.');
+  if(!ing||!sal) return fail('Ingresa las fechas de ingreso y de salida.');
+  if(sal<=ing) return fail('La fecha de salida debe ser posterior a la de ingreso.');
+  err.style.display='none';
+
+  // Décimo tercero proporcional (periodo 1 dic - 30 nov)
+  const p13=maxD(ing,inicioPeriodo(sal,11,1));
+  const dec13=rem/360*Math.min(360,dias(p13,sal));
+  // Décimo cuarto proporcional (Sierra: 1 ago; Costa: 1 mar)
+  const mes14=region==='sierra'?7:2;
+  const p14=maxD(ing,inicioPeriodo(sal,mes14,1));
+  const dec14=sbu/360*Math.min(360,dias(p14,sal));
+  // Vacaciones no gozadas (15 días/año = rem/2 por año) desde último aniversario
+  const aniv=maxD(ing,inicioPeriodo(sal,ing.getMonth(),ing.getDate()));
+  const vac=rem/720*Math.min(360,dias(aniv,sal));
+
+  // Tiempo de servicio
+  const totalDias=dias(ing,sal);
+  const anios=totalDias/365;
+  const aniosCompletos=Math.floor(anios);
+  const nAnios=aniosCompletos+((anios-aniosCompletos)>0?1:0); // fracción = año completo
+
+  let indem=0, bonif=0;
+  if(motivo==='despido'){
+    indem = (anios<=3) ? 3*rem : Math.min(nAnios,25)*rem; // Art. 188
+  } else if(motivo==='desahucio'){
+    bonif = 0.25*rem*nAnios; // Art. 185
+  }
+
+  const total=dec13+dec14+vac+indem+bonif;
+
+  const filas=[
+    ['Décimo tercero proporcional',dec13],
+    ['Décimo cuarto proporcional',dec14],
+    ['Vacaciones no gozadas',vac]
+  ];
+  if(indem>0) filas.push(['Indemnización por despido intempestivo (Art. 188)',indem]);
+  if(bonif>0) filas.push(['Bonificación por desahucio (Art. 185)',bonif]);
+
+  let html='';
+  filas.forEach(([k,v])=>{html+='<tr><td>'+k+'</td><td>'+fmt(v)+'</td></tr>';});
+  html+='<tr><td><b>Total estimado</b></td><td><b>'+fmt(total)+'</b></td></tr>';
+  html+='<tr class="sub"><td colspan="2">Tiempo de servicio: '+aniosCompletos+' año(s) y '+(totalDias-aniosCompletos*365)+' día(s) aprox.</td></tr>';
+  $('detalle').innerHTML=html;
+  $('total').textContent=fmt(total);
+  $('out').className='out show';
+}
+$('calc').onclick=calcular;
+$('clr').onclick=()=>{['rem','ing','sal'].forEach(i=>$(i).value='');$('sbu').value='470';$('motivo').value='renuncia';$('region').value='sierra';$('out').className='out';$('err').style.display='none';$('rem').focus();};
+</script>
+</body>
+</html>

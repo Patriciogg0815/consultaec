@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es-EC">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Horas Extra Ecuador (50% y 100%) | ConsultaEC</title>
+<meta name="description" content="Calcula el pago de tus horas extra en Ecuador: suplementarias con recargo del 50% y extraordinarias con recargo del 100%. Rápido y gratis.">
+<link rel="canonical" href="https://consultaec.netlify.app/calculadora-horas-extra">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232563eb'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-size='30' font-weight='bold' fill='white' text-anchor='middle'%3EEC%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ConsultaEC">
+<meta property="og:title" content="Calculadora de Horas Extra Ecuador (50% y 100%)">
+<meta property="og:description" content="Calcula tus horas suplementarias y extraordinarias al instante. Gratis.">
+<meta property="og:url" content="https://consultaec.netlify.app/calculadora-horas-extra">
+<meta property="og:image" content="https://consultaec.netlify.app/og-image.png">
+<meta name="theme-color" content="#1d4ed8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+<script src="analytics.js" defer></script>
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6398797687169342" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="franja"></div>
+
+<header>
+  <nav class="nav wrap">
+    <a class="logo" href="index.html"><span class="dot">EC</span> ConsultaEC</a>
+    <span class="sp"></span>
+    <a class="link" href="index.html">Cédula / RUC</a>
+    <a class="link" href="calculadora-decimos.html">Décimos</a>
+    <a class="link" href="calculadora-iva.html">IVA</a>
+    <a class="link" href="calculadora-finiquito.html">Finiquito</a>
+    <a class="link" href="calculadora-sueldo-neto.html">Sueldo neto</a>
+    <a class="link on" href="calculadora-horas-extra.html">Horas extra</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <span class="badge">🇪🇨 Recargos 50% y 100%</span>
+    <h1>Calculadora de <span>horas extra</span></h1>
+    <p>Calcula cuánto te corresponde por horas suplementarias (50%) y extraordinarias (100%) según tu sueldo.</p>
+  </section>
+
+  <div class="wrap">
+    <div class="ad" id="ad-top"><span class="ad__label">Publicidad</span><div class="ad__box">Espacio publicitario 728×90</div></div>
+
+    <div class="grid">
+      <div>
+        <div class="card">
+          <h2>Ingresa tus datos</h2>
+          <p class="hint">El valor de la hora normal se calcula dividiendo el sueldo mensual para 240 horas.</p>
+          <div class="calc-grid">
+            <div class="field full">
+              <label class="lbl" for="sueldo">Sueldo mensual (US$)</label>
+              <input type="number" id="sueldo" inputmode="decimal" min="0" step="0.01" placeholder="Ej: 600">
+            </div>
+            <div class="field">
+              <label class="lbl" for="sup">Horas suplementarias (recargo 50%)</label>
+              <input type="number" id="sup" inputmode="decimal" min="0" step="0.5" placeholder="0">
+            </div>
+            <div class="field">
+              <label class="lbl" for="ext">Horas extraordinarias (recargo 100%)</label>
+              <input type="number" id="ext" inputmode="decimal" min="0" step="0.5" placeholder="0">
+            </div>
+          </div>
+          <div class="actions" style="margin-top:10px">
+            <button class="btn" id="calc">Calcular</button>
+            <button class="btn ghost" id="clr">Limpiar</button>
+          </div>
+
+          <div class="out" id="out">
+            <div class="big">
+              <span><span class="lbl2">Total a recibir por horas extra</span><br><span class="num" id="total">$0,00</span></span>
+              <span style="font-size:34px">⏱️</span>
+            </div>
+            <table class="tab-det">
+              <tr><td>Valor hora normal (sueldo ÷ 240)</td><td id="vhora">$0,00</td></tr>
+              <tr><td>Horas suplementarias (× 1,5)</td><td id="rsup">$0,00</td></tr>
+              <tr><td>Horas extraordinarias (× 2)</td><td id="rext">$0,00</td></tr>
+              <tr><td><b>Total</b></td><td id="rtotal">$0,00</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="ad ad--rect"><span class="ad__label">Publicidad</span><div class="ad__box">Espacio publicitario 300×250 / responsive</div></div>
+
+        <section class="faq" id="faq">
+          <h2>Preguntas frecuentes</h2>
+          <details open><summary>¿Cuál es la diferencia entre horas suplementarias y extraordinarias?</summary><p>Las suplementarias son las que trabajas después de tu jornada, hasta un máximo diario, y tienen un recargo del 50%. Las extraordinarias son las de noche (24h a 6h), sábados, domingos o feriados, con un recargo del 100%.</p></details>
+          <details><summary>¿Cómo se calcula el valor de la hora?</summary><p>Se divide el sueldo mensual para 240 horas. Ese es el valor de la hora normal; luego se aplica el recargo correspondiente (×1,5 o ×2).</p></details>
+          <details><summary>¿Este cálculo es oficial?</summary><p>Es una estimación referencial basada en las reglas generales del Código del Trabajo. Verifica con tu rol de pagos.</p></details>
+        </section>
+      </div>
+
+      <aside class="aside">
+        <div class="ad ad--side" style="margin-top:0"><span class="ad__label">Publicidad</span><div class="ad__box">Espacio publicitario 300×600</div></div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="fcols">
+    <div class="fnote">
+      <span class="logo" style="font-size:16px"><span class="dot" style="width:26px;height:26px;border-radius:8px;font-size:12px">EC</span> ConsultaEC</span>
+      <p style="margin-top:10px">Herramientas gratuitas para Ecuador. Cálculo local en tu navegador.</p>
+    </div>
+    <div class="flinks">
+      <a href="index.html">Validar Cédula / RUC</a>
+      <a href="calculadora-decimos.html">Calculadora de Décimos</a>
+      <a href="calculadora-iva.html">Calculadora de IVA</a>
+      <a href="calculadora-finiquito.html">Calculadora de Finiquito</a>
+      <a href="calculadora-sueldo-neto.html">Calculadora de Sueldo Neto</a>
+      <a href="calculadora-horas-extra.html">Calculadora de Horas Extra</a>
+      <a href="politica-privacidad.html">Política de Privacidad</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+  </div>
+  <div class="wrap"><div class="legal"><b>Aviso:</b> Cálculo referencial. No sustituye el rol de pagos oficial de tu empleador.</div></div>
+</footer>
+
+<script>
+const fmt=n=>'$'+(Math.round(n*100)/100).toLocaleString('es-EC',{minimumFractionDigits:2,maximumFractionDigits:2});
+const $=id=>document.getElementById(id);
+function calcular(){
+  const sueldo=parseFloat($('sueldo').value)||0;
+  const sup=parseFloat($('sup').value)||0;
+  const ext=parseFloat($('ext').value)||0;
+  if(sueldo<=0){ $('out').className='out'; $('sueldo').focus(); return; }
+  const vh=sueldo/240;
+  const pSup=sup*vh*1.5;
+  const pExt=ext*vh*2;
+  const total=pSup+pExt;
+  $('vhora').textContent=fmt(vh);
+  $('rsup').textContent=fmt(pSup);
+  $('rext').textContent=fmt(pExt);
+  $('rtotal').textContent=fmt(total);
+  $('total').textContent=fmt(total);
+  $('out').className='out show';
+}
+$('calc').onclick=calcular;
+$('clr').onclick=()=>{$('sueldo').value='';$('sup').value='';$('ext').value='';$('out').className='out';$('sueldo').focus();};
+['sueldo','sup','ext'].forEach(id=>$(id).addEventListener('keydown',e=>{if(e.key==='Enter')calcular();}));
+</script>
+</body>
+</html>

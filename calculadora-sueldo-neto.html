@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es-EC">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Sueldo Neto Ecuador (Aporte IESS 9,45%) | ConsultaEC</title>
+<meta name="description" content="Calcula tu sueldo neto en Ecuador después del aporte personal al IESS (9,45%). Ingresa tu sueldo bruto y descuentos y obtén lo que recibes en mano.">
+<link rel="canonical" href="https://consultaec.netlify.app/calculadora-sueldo-neto">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232563eb'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-size='30' font-weight='bold' fill='white' text-anchor='middle'%3EEC%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ConsultaEC">
+<meta property="og:title" content="Calculadora de Sueldo Neto Ecuador (IESS 9,45%)">
+<meta property="og:description" content="Calcula tu sueldo neto después del aporte al IESS. Gratis.">
+<meta property="og:url" content="https://consultaec.netlify.app/calculadora-sueldo-neto">
+<meta property="og:image" content="https://consultaec.netlify.app/og-image.png">
+<meta name="theme-color" content="#1d4ed8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+<script src="analytics.js" defer></script>
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6398797687169342" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="franja"></div>
+
+<header>
+  <nav class="nav wrap">
+    <a class="logo" href="index.html"><span class="dot">EC</span> ConsultaEC</a>
+    <span class="sp"></span>
+    <a class="link" href="index.html">Cédula / RUC</a>
+    <a class="link" href="calculadora-decimos.html">Décimos</a>
+    <a class="link" href="calculadora-iva.html">IVA</a>
+    <a class="link" href="calculadora-finiquito.html">Finiquito</a>
+    <a class="link on" href="calculadora-sueldo-neto.html">Sueldo neto</a>
+    <a class="link" href="calculadora-horas-extra.html">Horas extra</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <span class="badge">🇪🇨 Aporte IESS: 9,45%</span>
+    <h1>Calculadora de <span>sueldo neto</span></h1>
+    <p>Descubre cuánto recibes “en mano” después del aporte personal al IESS y otros descuentos.</p>
+  </section>
+
+  <div class="wrap">
+    <div class="ad" id="ad-top"><span class="ad__label">Publicidad</span><div class="ad__box">Espacio publicitario 728×90</div></div>
+
+    <div class="grid">
+      <div>
+        <div class="card">
+          <h2>Ingresa tus datos</h2>
+          <p class="hint">El aporte personal al IESS es el 9,45% del sueldo. Puedes agregar otros descuentos (préstamos, anticipos, etc.).</p>
+          <div class="calc-grid">
+            <div class="field">
+              <label class="lbl" for="bruto">Sueldo bruto mensual (US$)</label>
+              <input type="number" id="bruto" inputmode="decimal" min="0" step="0.01" placeholder="Ej: 800">
+            </div>
+            <div class="field">
+              <label class="lbl" for="iess">Aporte personal IESS (%)</label>
+              <input type="number" id="iess" inputmode="decimal" min="0" step="0.01" value="9.45">
+            </div>
+            <div class="field full">
+              <label class="lbl" for="otros">Otros descuentos (US$) — opcional</label>
+              <input type="number" id="otros" inputmode="decimal" min="0" step="0.01" placeholder="0.00">
+            </div>
+          </div>
+          <div class="actions" style="margin-top:10px">
+            <button class="btn" id="calc">Calcular</button>
+            <button class="btn ghost" id="clr">Limpiar</button>
+          </div>
+
+          <div class="out" id="out">
+            <div class="big">
+              <span><span class="lbl2">Sueldo neto (recibes en mano)</span><br><span class="num" id="neto">$0,00</span></span>
+              <span style="font-size:34px">💵</span>
+            </div>
+            <table class="tab-det">
+              <tr><td>Sueldo bruto</td><td id="rbruto">$0,00</td></tr>
+              <tr><td>(−) Aporte IESS (<span id="riesspct">9,45</span>%)</td><td id="riess">$0,00</td></tr>
+              <tr><td>(−) Otros descuentos</td><td id="rotros">$0,00</td></tr>
+              <tr><td><b>Sueldo neto</b></td><td id="rneto">$0,00</td></tr>
+              <tr class="sub"><td colspan="2">Referencia: aporte patronal (lo paga el empleador, no se descuenta) ≈ <span id="patronal">$0,00</span> (11,15%).</td></tr>
+            </table>
+          </div>
+
+          <div class="aviso" style="margin-top:18px">
+            <b>Nota:</b> Este cálculo no incluye la retención del Impuesto a la Renta, que aplica solo si tu ingreso anual supera la fracción básica desgravada del SRI. Para sueldos altos, el neto puede ser menor.
+          </div>
+        </div>
+
+        <div class="ad ad--rect"><span class="ad__label">Publicidad</span><div class="ad__box">Espacio publicitario 300×250 / responsive</div></div>
+
+        <section class="faq" id="faq">
+          <h2>Preguntas frecuentes</h2>
+          <details open><summary>¿Cuánto se descuenta del sueldo para el IESS?</summary><p>En relación de dependencia, el aporte personal al IESS es el 9,45% del sueldo. Se descuenta cada mes de tu remuneración.</p></details>
+          <details><summary>¿Qué es el aporte patronal?</summary><p>Es el aporte que hace el empleador al IESS (aproximadamente 11,15%). No se descuenta de tu sueldo; lo paga la empresa además de tu salario.</p></details>
+          <details><summary>¿Se descuenta impuesto a la renta?</summary><p>Solo si tu ingreso anual proyectado supera la fracción básica desgravada que fija el SRI cada año. Muchos trabajadores no pagan impuesto a la renta.</p></details>
+        </section>
+      </div>
+
+      <aside class="aside">
+        <div class="ad ad--side" style="margin-top:0"><span class="ad__label">Publicidad</span><div class="ad__box">Espacio publicitario 300×600</div></div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="fcols">
+    <div class="fnote">
+      <span class="logo" style="font-size:16px"><span class="dot" style="width:26px;height:26px;border-radius:8px;font-size:12px">EC</span> ConsultaEC</span>
+      <p style="margin-top:10px">Herramientas gratuitas para Ecuador. Cálculo local en tu navegador.</p>
+    </div>
+    <div class="flinks">
+      <a href="index.html">Validar Cédula / RUC</a>
+      <a href="calculadora-decimos.html">Calculadora de Décimos</a>
+      <a href="calculadora-iva.html">Calculadora de IVA</a>
+      <a href="calculadora-finiquito.html">Calculadora de Finiquito</a>
+      <a href="calculadora-sueldo-neto.html">Calculadora de Sueldo Neto</a>
+      <a href="calculadora-horas-extra.html">Calculadora de Horas Extra</a>
+      <a href="politica-privacidad.html">Política de Privacidad</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+  </div>
+  <div class="wrap"><div class="legal"><b>Aviso:</b> Cálculo referencial. No sustituye el rol de pagos oficial de tu empleador.</div></div>
+</footer>
+
+<script>
+const fmt=n=>'$'+(Math.round(n*100)/100).toLocaleString('es-EC',{minimumFractionDigits:2,maximumFractionDigits:2});
+const $=id=>document.getElementById(id);
+function calcular(){
+  const bruto=parseFloat($('bruto').value)||0;
+  const pct=parseFloat($('iess').value)||0;
+  const otros=parseFloat($('otros').value)||0;
+  if(bruto<=0){ $('out').className='out'; $('bruto').focus(); return; }
+  const iess=bruto*pct/100;
+  const neto=bruto-iess-otros;
+  const patronal=bruto*0.1115;
+  $('neto').textContent=fmt(neto);
+  $('rbruto').textContent=fmt(bruto);
+  $('riess').textContent=fmt(iess);
+  $('riesspct').textContent=(Math.round(pct*100)/100).toString().replace('.',',');
+  $('rotros').textContent=fmt(otros);
+  $('rneto').textContent=fmt(neto);
+  $('patronal').textContent=fmt(patronal);
+  $('out').className='out show';
+}
+$('calc').onclick=calcular;
+$('clr').onclick=()=>{$('bruto').value='';$('iess').value='9.45';$('otros').value='';$('out').className='out';$('bruto').focus();};
+['bruto','iess','otros'].forEach(id=>$(id).addEventListener('keydown',e=>{if(e.key==='Enter')calcular();}));
+</script>
+</body>
+</html>

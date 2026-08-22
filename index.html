@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es-EC">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Validar Cédula y RUC de Ecuador — Rápido y Gratis | ConsultaEC</title>
+<meta name="description" content="Valida tu cédula y RUC ecuatoriano al instante. Verifica el dígito de verificación, la provincia y el tipo de contribuyente. Gratis, seguro y sin datos personales.">
+<meta name="google-site-verification" content="txbW903kNm1HkcUjitFXqZqaxAUey35PBjyDOUpV-vI" />
+<link rel="canonical" href="https://consultaec.netlify.app/">
+
+<!-- Ícono / favicon -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232563eb'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-size='30' font-weight='bold' fill='white' text-anchor='middle'%3EEC%3C/text%3E%3C/svg%3E">
+
+<!-- Redes sociales (Open Graph / Twitter) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ConsultaEC">
+<meta property="og:title" content="Validar Cédula y RUC de Ecuador — Rápido y Gratis">
+<meta property="og:description" content="Valida cédula y RUC ecuatoriano al instante. Gratis, seguro y sin datos personales.">
+<meta property="og:url" content="https://consultaec.netlify.app/">
+<meta property="og:image" content="https://consultaec.netlify.app/og-image.png">
+<meta property="og:locale" content="es_EC">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Validar Cédula y RUC de Ecuador">
+<meta name="twitter:description" content="Valida cédula y RUC ecuatoriano al instante. Gratis y seguro.">
+<meta name="twitter:image" content="https://consultaec.netlify.app/og-image.png">
+
+<meta name="theme-color" content="#1d4ed8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+<script src="analytics.js" defer></script>
+
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6398797687169342" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="franja"></div>
+
+<header>
+  <nav class="nav wrap">
+    <a class="logo" href="index.html"><span class="dot">EC</span> ConsultaEC</a>
+    <span class="sp"></span>
+    <a class="link on" href="index.html">Cédula / RUC</a>
+    <a class="link" href="calculadora-decimos.html">Décimos</a>
+    <a class="link" href="calculadora-iva.html">IVA</a>
+    <a class="link" href="calculadora-finiquito.html">Finiquito</a>
+    <a class="link" href="calculadora-sueldo-neto.html">Sueldo neto</a>
+    <a class="link" href="calculadora-horas-extra.html">Horas extra</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <span class="badge">🇪🇨 Hecho para Ecuador · 100% gratis</span>
+    <h1>Valida tu <span>cédula y RUC</span><br>ecuatoriano al instante</h1>
+    <p>Verifica el dígito de verificación, la provincia y el tipo de contribuyente en un segundo. Sin registros, sin datos personales, directo desde tu navegador.</p>
+  </section>
+
+  <div class="wrap">
+    <!-- ===== PUBLICIDAD · BLOQUE SUPERIOR (leaderboard) ===== -->
+    <div class="ad" id="ad-top">
+      <span class="ad__label">Publicidad</span>
+      <div class="ad__box">Espacio publicitario 728×90</div>
+    </div>
+
+    <div class="grid" id="validar">
+      <div>
+        <div class="tabs">
+          <button class="tab on" data-t="ced">🪪 Validar Cédula</button>
+          <button class="tab" data-t="ruc">🏢 Validar RUC</button>
+        </div>
+
+        <div class="panel on card" id="p-ced">
+          <h2>Validador de cédula</h2>
+          <p class="hint">Ingresa los 10 dígitos de la cédula ecuatoriana.</p>
+          <div class="field">
+            <label class="lbl" for="ced">Número de cédula</label>
+            <div class="input-row">
+              <input type="text" id="ced" inputmode="numeric" autocomplete="off" maxlength="10" placeholder="Ej: 1710034065">
+              <button class="btn" id="btn-ced">Validar</button>
+            </div>
+          </div>
+          <div class="actions"><button class="btn ghost" id="clr-ced">Limpiar</button></div>
+          <div class="result" id="res-ced">
+            <div class="top"><span class="ico"></span><span class="msg"></span></div>
+            <div class="chips"></div>
+          </div>
+        </div>
+
+        <div class="panel card" id="p-ruc">
+          <h2>Validador de RUC</h2>
+          <p class="hint">Ingresa los 13 dígitos del RUC (persona natural, sociedad privada o pública).</p>
+          <div class="field">
+            <label class="lbl" for="ruc">Número de RUC</label>
+            <div class="input-row">
+              <input type="text" id="ruc" inputmode="numeric" autocomplete="off" maxlength="13" placeholder="Ej: 1710034065001">
+              <button class="btn" id="btn-ruc">Validar</button>
+            </div>
+          </div>
+          <div class="actions">
+            <button class="btn ghost" id="clr-ruc">Limpiar</button>
+            <button class="btn ghost" id="sri-ruc">🔎 Consultar en SRI</button>
+          </div>
+          <div class="result" id="res-ruc">
+            <div class="top"><span class="ico"></span><span class="msg"></span></div>
+            <div class="chips"></div>
+          </div>
+          <div class="aviso" id="sri-box" style="display:none;background:var(--azul-claro);border-color:color-mix(in srgb,var(--azul) 30%,transparent);color:var(--azul-osc)"></div>
+        </div>
+
+        <!-- ===== PUBLICIDAD · EN CONTENIDO (rectángulo) ===== -->
+        <div class="ad ad--rect" id="ad-mid">
+          <span class="ad__label">Publicidad</span>
+          <div class="ad__box">Espacio publicitario 300×250 / responsive</div>
+        </div>
+
+        <div class="perks">
+          <div class="perk"><div class="e">⚡</div><h3>Al instante</h3><p>La validación se calcula en tu dispositivo, sin esperas ni recargas.</p></div>
+          <div class="perk"><div class="e">🔒</div><h3>Privado y seguro</h3><p>No guardamos ni mostramos datos personales. Solo verificamos el número.</p></div>
+          <div class="perk"><div class="e">📱</div><h3>En cualquier equipo</h3><p>Funciona perfecto en celular, tablet y computadora.</p></div>
+        </div>
+      </div>
+
+      <aside class="aside">
+        <!-- ===== PUBLICIDAD · LATERAL (skyscraper) ===== -->
+        <div class="ad ad--side" id="ad-side" style="margin-top:0">
+          <span class="ad__label">Publicidad</span>
+          <div class="ad__box">Espacio publicitario 300×600</div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section class="faq" id="faq">
+      <h2>Preguntas frecuentes</h2>
+      <p class="sub">Todo lo que necesitas saber sobre la cédula y el RUC en Ecuador.</p>
+
+      <details open>
+        <summary>¿Cómo se valida una cédula ecuatoriana?</summary>
+        <p>La cédula tiene 10 dígitos. Los dos primeros indican la provincia (01 a 24, o 30 para registrados en el exterior) y el tercero debe ser menor a 6. El último dígito es un “dígito verificador” calculado con el algoritmo módulo 10 sobre los 9 primeros. Esta herramienta comprueba todo eso automáticamente.</p>
+      </details>
+      <details>
+        <summary>¿Qué es el dígito verificador?</summary>
+        <p>Es un número de control que permite detectar errores de tipeo. Se obtiene con una fórmula matemática; si no coincide, el número no es válido aunque tenga la cantidad correcta de dígitos.</p>
+      </details>
+      <details>
+        <summary>¿Cómo está formado el RUC?</summary>
+        <p>El RUC tiene 13 dígitos. Para personas naturales son los 10 de la cédula + “001”. Para sociedades privadas el tercer dígito es 9, y para instituciones públicas es 6; cada tipo usa el algoritmo módulo 11 para su dígito verificador.</p>
+      </details>
+      <details>
+        <summary>¿Puedo ver el nombre del titular de una cédula?</summary>
+        <p>No. Mostrar el nombre de una persona a partir de su cédula es un dato personal protegido por la Ley Orgánica de Protección de Datos Personales (LOPDP) del Ecuador. Esta herramienta solo <b>valida</b> el número; nunca revela identidades.</p>
+      </details>
+      <details>
+        <summary>¿La consulta de RUC muestra la razón social?</summary>
+        <p>El RUC es información tributaria de carácter público del SRI. El botón “Consultar en SRI” te lleva a la consulta oficial para ver estado y razón social directamente en la fuente autorizada.</p>
+      </details>
+    </section>
+
+    <!-- ===== PUBLICIDAD · INFERIOR ===== -->
+    <div class="ad" id="ad-bottom">
+      <span class="ad__label">Publicidad</span>
+      <div class="ad__box">Espacio publicitario responsive</div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="fcols">
+    <div class="fnote">
+      <span class="logo" style="font-size:16px"><span class="dot" style="width:26px;height:26px;border-radius:8px;font-size:12px">EC</span> ConsultaEC</span>
+      <p style="margin-top:10px">Herramientas gratuitas para Ecuador: validación de cédula y RUC, y calculadoras de décimos, IVA y finiquito. Cálculo local en tu navegador.</p>
+    </div>
+    <div class="flinks">
+      <a href="index.html">Validar Cédula / RUC</a>
+      <a href="calculadora-decimos.html">Calculadora de Décimos</a>
+      <a href="calculadora-iva.html">Calculadora de IVA</a>
+      <a href="calculadora-finiquito.html">Calculadora de Finiquito</a>
+      <a href="calculadora-sueldo-neto.html">Calculadora de Sueldo Neto</a>
+      <a href="calculadora-horas-extra.html">Calculadora de Horas Extra</a>
+      <a href="politica-privacidad.html">Política de Privacidad</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="legal">
+      <b>Aviso:</b> Este sitio realiza únicamente validaciones y cálculos referenciales. No consulta, almacena ni divulga datos personales de terceros, en cumplimiento de la Ley Orgánica de Protección de Datos Personales (LOPDP). No es un sitio oficial del SRI ni del Registro Civil.
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ---------- Provincias ---------- */
+const PROV={1:'Azuay',2:'Bolívar',3:'Cañar',4:'Carchi',5:'Cotopaxi',6:'Chimborazo',7:'El Oro',8:'Esmeraldas',9:'Guayas',10:'Imbabura',11:'Loja',12:'Los Ríos',13:'Manabí',14:'Morona Santiago',15:'Napo',16:'Pastaza',17:'Pichincha',18:'Tungurahua',19:'Zamora Chinchipe',20:'Galápagos',21:'Sucumbíos',22:'Orellana',23:'Santo Domingo de los Tsáchilas',24:'Santa Elena',30:'Registrado en el exterior'};
+
+function modulo10(nueve){
+  const coef=[2,1,2,1,2,1,2,1,2]; let suma=0;
+  for(let i=0;i<9;i++){ let p=(+nueve[i])*coef[i]; if(p>=10)p-=9; suma+=p; }
+  const r=suma%10; return r===0?0:10-r;
+}
+function modulo11(digs,coef){
+  let suma=0; for(let i=0;i<coef.length;i++) suma+=(+digs[i])*coef[i];
+  const r=suma%11; return r===0?0:11-r;
+}
+function validarCedula(ced){
+  if(!/^\d{10}$/.test(ced)) return {ok:false,msg:'La cédula debe tener exactamente 10 dígitos.'};
+  const prov=+ced.substring(0,2);
+  if(!PROV[prov]) return {ok:false,msg:'Los dos primeros dígitos no corresponden a una provincia válida.'};
+  if(+ced[2]>=6) return {ok:false,msg:'El tercer dígito de una cédula debe ser menor a 6.'};
+  const ver=modulo10(ced.substring(0,9));
+  if(ver!==+ced[9]) return {ok:false,msg:'El dígito verificador no coincide. Revisa el número.'};
+  return {ok:true,msg:'Cédula válida',chips:[['Provincia',PROV[prov]],['Dígito verificador',ced[9]+' ✓'],['Tipo','Persona natural']]};
+}
+function validarRUC(ruc){
+  if(!/^\d{13}$/.test(ruc)) return {ok:false,msg:'El RUC debe tener exactamente 13 dígitos.'};
+  const prov=+ruc.substring(0,2);
+  if(!PROV[prov]) return {ok:false,msg:'Los dos primeros dígitos no corresponden a una provincia válida.'};
+  const t=+ruc[2];
+  if(t<6){
+    const c=validarCedula(ruc.substring(0,10));
+    if(!c.ok) return {ok:false,msg:'RUC de persona natural inválido: '+c.msg.toLowerCase()};
+    if(ruc.substring(10)==='000') return {ok:false,msg:'El establecimiento (últimos 3 dígitos) no puede ser 000.'};
+    return {ok:true,msg:'RUC válido',chips:[['Provincia',PROV[prov]],['Tipo','Persona natural'],['Establecimiento',ruc.substring(10)]]};
+  }
+  if(t===6){
+    const ver=modulo11(ruc.substring(0,8),[3,2,7,6,5,4,3,2]);
+    if(ver!==+ruc[8]) return {ok:false,msg:'Dígito verificador incorrecto para sociedad pública.'};
+    if(ruc.substring(9)==='0000') return {ok:false,msg:'El establecimiento (últimos 4 dígitos) no puede ser 0000.'};
+    return {ok:true,msg:'RUC válido',chips:[['Provincia',PROV[prov]],['Tipo','Sociedad / institución pública'],['Establecimiento',ruc.substring(9)]]};
+  }
+  if(t===9){
+    const ver=modulo11(ruc.substring(0,9),[4,3,2,7,6,5,4,3,2]);
+    if(ver!==+ruc[9]) return {ok:false,msg:'Dígito verificador incorrecto para sociedad privada.'};
+    if(ruc.substring(10)==='000') return {ok:false,msg:'El establecimiento (últimos 3 dígitos) no puede ser 000.'};
+    return {ok:true,msg:'RUC válido',chips:[['Provincia',PROV[prov]],['Tipo','Sociedad privada / extranjera'],['Establecimiento',ruc.substring(10)]]};
+  }
+  return {ok:false,msg:'El tercer dígito no corresponde a ningún tipo de RUC (natural 0-5, pública 6, privada 9).'};
+}
+
+function pintar(box,r,valor){
+  box.className='result show '+(r.ok?'ok':'err');
+  box.querySelector('.ico').textContent=r.ok?'✓':'✕';
+  box.querySelector('.msg').textContent=r.msg;
+  const chips=box.querySelector('.chips'); chips.innerHTML='';
+  if(r.ok && r.chips){
+    r.chips.forEach(([k,v])=>{const s=document.createElement('span');s.className='chip';s.innerHTML=k+': <b>'+v+'</b>';chips.appendChild(s);});
+    const cp=document.createElement('button');cp.className='copy';cp.textContent='Copiar número';
+    cp.onclick=()=>{navigator.clipboard.writeText(valor);cp.textContent='¡Copiado!';setTimeout(()=>cp.textContent='Copiar número',1400);};
+    chips.appendChild(cp);
+  }
+  chips.style.display=(r.ok&&r.chips)?'flex':'none';
+}
+function soloDigitos(el){el.value=el.value.replace(/\D/g,'');}
+
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));
+  document.querySelectorAll('.panel').forEach(x=>x.classList.remove('on'));
+  t.classList.add('on');
+  document.getElementById('p-'+t.dataset.t).classList.add('on');
+});
+
+const ced=document.getElementById('ced'), resCed=document.getElementById('res-ced');
+ced.addEventListener('input',()=>soloDigitos(ced));
+function goCed(){ if(!ced.value){resCed.className='result';return;} pintar(resCed,validarCedula(ced.value),ced.value); }
+document.getElementById('btn-ced').onclick=goCed;
+ced.addEventListener('keydown',e=>{if(e.key==='Enter')goCed();});
+document.getElementById('clr-ced').onclick=()=>{ced.value='';resCed.className='result';ced.focus();};
+
+const ruc=document.getElementById('ruc'), resRuc=document.getElementById('res-ruc'), sriBox=document.getElementById('sri-box');
+ruc.addEventListener('input',()=>{soloDigitos(ruc);sriBox.style.display='none';});
+function goRuc(){ sriBox.style.display='none'; if(!ruc.value){resRuc.className='result';return;} pintar(resRuc,validarRUC(ruc.value),ruc.value); }
+document.getElementById('btn-ruc').onclick=goRuc;
+ruc.addEventListener('keydown',e=>{if(e.key==='Enter')goRuc();});
+document.getElementById('clr-ruc').onclick=()=>{ruc.value='';resRuc.className='result';sriBox.style.display='none';ruc.focus();};
+document.getElementById('sri-ruc').onclick=()=>{
+  const v=ruc.value.trim(); const r=validarRUC(v);
+  sriBox.style.display='block';
+  if(!r.ok){ sriBox.innerHTML='Primero ingresa un RUC válido para consultarlo en el SRI.'; return; }
+  sriBox.innerHTML='Consulta el estado y la razón social de <b>'+v+'</b> en la fuente oficial: '+
+    '<a href="https://srienlinea.sri.gob.ec/sri-en-linea/SriRucWeb/ConsultaRuc/Consultas/consultaRuc" target="_blank" rel="noopener">Abrir consulta RUC del SRI ↗</a>';
+};
+</script>
+</body>
+</html>

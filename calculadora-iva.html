@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es-EC">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de IVA 15% Ecuador — Agregar o Desglosar | ConsultaEC</title>
+<meta name="description" content="Calcula el IVA del 15% en Ecuador. Agrega el IVA a un valor o desglosa el IVA de un precio final. Rápido, gratis y exacto.">
+<link rel="canonical" href="https://consultaec.netlify.app/calculadora-iva">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232563eb'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-size='30' font-weight='bold' fill='white' text-anchor='middle'%3EEC%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ConsultaEC">
+<meta property="og:title" content="Calculadora de IVA 15% Ecuador">
+<meta property="og:description" content="Agrega o desglosa el IVA del 15% al instante. Gratis.">
+<meta property="og:url" content="https://consultaec.netlify.app/calculadora-iva">
+<meta property="og:image" content="https://consultaec.netlify.app/og-image.png">
+<meta name="theme-color" content="#1d4ed8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilo.css">
+<script src="analytics.js" defer></script>
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6398797687169342" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="franja"></div>
+
+<header>
+  <nav class="nav wrap">
+    <a class="logo" href="index.html"><span class="dot">EC</span> ConsultaEC</a>
+    <span class="sp"></span>
+    <a class="link" href="index.html">Cédula / RUC</a>
+    <a class="link" href="calculadora-decimos.html">Décimos</a>
+    <a class="link on" href="calculadora-iva.html">IVA</a>
+    <a class="link" href="calculadora-finiquito.html">Finiquito</a>
+    <a class="link" href="calculadora-sueldo-neto.html">Sueldo neto</a>
+    <a class="link" href="calculadora-horas-extra.html">Horas extra</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <span class="badge">🇪🇨 IVA vigente: 15%</span>
+    <h1>Calculadora de <span>IVA</span></h1>
+    <p>Agrega el IVA a un valor sin impuesto, o desglosa cuánto IVA tiene un precio final. Ideal para facturas, cotizaciones y compras.</p>
+  </section>
+
+  <div class="wrap">
+    <div class="ad" id="ad-top"><span class="ad__label">Publicidad</span><div class="ad__box">Espacio publicitario 728×90</div></div>
+
+    <div class="grid">
+      <div>
+        <div class="card">
+          <h2>Calcular IVA</h2>
+          <p class="hint">Elige si quieres agregar el IVA o separarlo de un precio que ya lo incluye.</p>
+          <div class="calc-grid">
+            <div class="field">
+              <label class="lbl" for="modo">¿Qué necesitas?</label>
+              <select id="modo">
+                <option value="add">Agregar IVA a un valor sin impuesto</option>
+                <option value="del">Desglosar IVA de un precio final</option>
+              </select>
+            </div>
+            <div class="field">
+              <label class="lbl" for="tasa">Tasa de IVA (%)</label>
+              <input type="number" id="tasa" inputmode="decimal" min="0" step="0.5" value="15">
+            </div>
+            <div class="field full">
+              <label class="lbl" for="monto" id="lblMonto">Valor sin IVA (US$)</label>
+              <input type="number" id="monto" inputmode="decimal" min="0" step="0.01" placeholder="Ej: 100">
+            </div>
+          </div>
+          <div class="actions" style="margin-top:10px">
+            <button class="btn" id="calc">Calcular</button>
+            <button class="btn ghost" id="clr">Limpiar</button>
+          </div>
+
+          <div class="out" id="out">
+            <div class="big">
+              <span><span class="lbl2" id="lblGrande">Precio final con IVA</span><br><span class="num" id="grande">$0,00</span></span>
+              <span style="font-size:34px">🧾</span>
+            </div>
+            <table class="tab-det">
+              <tr><td>Base imponible (sin IVA)</td><td id="rbase">$0,00</td></tr>
+              <tr><td>IVA (<span id="rtasa">15</span>%)</td><td id="riva">$0,00</td></tr>
+              <tr><td><b>Total con IVA</b></td><td id="rtotal">$0,00</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="ad ad--rect"><span class="ad__label">Publicidad</span><div class="ad__box">Espacio publicitario 300×250 / responsive</div></div>
+
+        <section class="faq" id="faq">
+          <h2>Preguntas frecuentes</h2>
+          <details open><summary>¿Cuál es la tasa de IVA en Ecuador?</summary><p>La tarifa general del IVA en Ecuador es del 15%. Existen bienes y servicios con tarifa 0% (por ejemplo, algunos alimentos y medicinas) y casos especiales; puedes cambiar la tasa en la calculadora si lo necesitas.</p></details>
+          <details><summary>¿Cómo se agrega el IVA a un valor?</summary><p>Se multiplica el valor sin impuesto por la tasa. Con 15%: IVA = valor × 0,15, y el total = valor × 1,15.</p></details>
+          <details><summary>¿Cómo desgloso el IVA de un precio final?</summary><p>Se divide el precio final para 1,15 para obtener la base; la diferencia es el IVA. Base = precio ÷ 1,15; IVA = precio − base.</p></details>
+        </section>
+      </div>
+
+      <aside class="aside">
+        <div class="ad ad--side" style="margin-top:0"><span class="ad__label">Publicidad</span><div class="ad__box">Espacio publicitario 300×600</div></div>
+      </aside>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="fcols">
+    <div class="fnote">
+      <span class="logo" style="font-size:16px"><span class="dot" style="width:26px;height:26px;border-radius:8px;font-size:12px">EC</span> ConsultaEC</span>
+      <p style="margin-top:10px">Herramientas gratuitas para Ecuador. Cálculo local en tu navegador.</p>
+    </div>
+    <div class="flinks">
+      <a href="index.html">Validar Cédula / RUC</a>
+      <a href="calculadora-decimos.html">Calculadora de Décimos</a>
+      <a href="calculadora-iva.html">Calculadora de IVA</a>
+      <a href="calculadora-finiquito.html">Calculadora de Finiquito</a>
+      <a href="calculadora-sueldo-neto.html">Calculadora de Sueldo Neto</a>
+      <a href="calculadora-horas-extra.html">Calculadora de Horas Extra</a>
+      <a href="politica-privacidad.html">Política de Privacidad</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+  </div>
+  <div class="wrap"><div class="legal"><b>Aviso:</b> Cálculo referencial. Verifica la tarifa de IVA aplicable a tu producto o servicio según el SRI.</div></div>
+</footer>
+
+<script>
+const fmt=n=>'$'+(Math.round(n*100)/100).toLocaleString('es-EC',{minimumFractionDigits:2,maximumFractionDigits:2});
+const $=id=>document.getElementById(id);
+function syncLabel(){ $('lblMonto').textContent = $('modo').value==='add' ? 'Valor sin IVA (US$)' : 'Precio final con IVA (US$)'; }
+$('modo').addEventListener('change',()=>{syncLabel(); if($('out').className.includes('show'))calcular();});
+function calcular(){
+  const monto=parseFloat($('monto').value)||0;
+  const tasa=parseFloat($('tasa').value)||0;
+  if(monto<=0){ $('out').className='out'; $('monto').focus(); return; }
+  const f=tasa/100; let base,iva,total;
+  if($('modo').value==='add'){ base=monto; iva=base*f; total=base+iva; $('lblGrande').textContent='Precio final con IVA'; $('grande').textContent=fmt(total); }
+  else { base=monto/(1+f); iva=monto-base; total=monto; $('lblGrande').textContent='IVA incluido en el precio'; $('grande').textContent=fmt(iva); }
+  $('rtasa').textContent=(Math.round(tasa*100)/100).toString().replace('.',',');
+  $('rbase').textContent=fmt(base);
+  $('riva').textContent=fmt(iva);
+  $('rtotal').textContent=fmt(total);
+  $('out').className='out show';
+}
+$('calc').onclick=calcular;
+$('clr').onclick=()=>{$('monto').value='';$('tasa').value='15';$('modo').value='add';syncLabel();$('out').className='out';$('monto').focus();};
+['monto','tasa'].forEach(id=>$(id).addEventListener('keydown',e=>{if(e.key==='Enter')calcular();}));
+syncLabel();
+</script>
+</body>
+</html>
