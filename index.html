@@ -146,7 +146,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 
   <div class="wrap">
-    <section class="faq" id="faq">
+    <div class="prose" style="margin:26px auto 4px">
+<h2>Todo sobre la cedula y el RUC en Ecuador</h2>
+<p>La <b>cedula de identidad</b> es el documento unico que identifica a cada ciudadano ecuatoriano, emitido por el Registro Civil (DIGERCIC). Su numero de 10 digitos no es aleatorio: sigue una estructura matematica que permite comprobar si es valido sin acceder a ningun dato personal.</p>
+<h3>Como esta formada la cedula</h3>
+<p>Los <b>dos primeros digitos</b> indican la provincia de emision (01 Azuay, 09 Guayas, 17 Pichincha... hasta 24 Santa Elena, y 30 para registrados en el exterior). El <b>tercer digito</b> es menor a 6 para personas naturales. El <b>ultimo digito es un digito verificador</b> calculado con el algoritmo <b>modulo 10</b>: se multiplican los nueve primeros por los coeficientes 2,1,2,1,2,1,2,1,2, se ajustan los productos mayores a 9 y, con la suma, se obtiene el digito de control. Si el numero que ingresas no cumple esa formula, no es una cedula valida.</p>
+<h3>El RUC y sus tres tipos</h3>
+<p>El <b>Registro Unico de Contribuyentes (RUC)</b> tiene 13 digitos y lo administra el SRI. Para <b>personas naturales</b> son los 10 digitos de la cedula mas 001. Para <b>sociedades privadas o extranjeras</b> el tercer digito es 9, y para <b>instituciones publicas</b> es 6; cada tipo usa el algoritmo <b>modulo 11</b> para su verificacion. Esta herramienta reconoce automaticamente el tipo y valida el digito de control.</p>
+<h3>Por que validar antes de usar un numero</h3>
+<p>Validar la cedula o el RUC evita errores costosos al llenar facturas, contratos, formularios del SRI o registros de clientes: un digito mal digitado se detecta al instante. Esta herramienta solo comprueba la <b>estructura matematica</b> del numero; no consulta ni revela datos de personas, en cumplimiento de la Ley Organica de Proteccion de Datos Personales (LOPDP).</p>
+</div>
+<section class="faq" id="faq">
       <h2>Preguntas frecuentes</h2>
       <p class="sub">Todo lo que necesitas saber sobre la cédula y el RUC en Ecuador.</p>
 
